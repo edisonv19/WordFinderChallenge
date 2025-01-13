@@ -20,7 +20,7 @@ internal class Program
         var streamWords = new List<string> { "cold", "wind", "snow", "chill" };
         var top10MostRepeatedWords = wordFinder.Find(streamWords);
 
-        PrintFinalScreen(wordFinder.Matrix, top10MostRepeatedWords);
+        PrintFinalScreen(wordFinder.Matrix, streamWords, top10MostRepeatedWords);
 
         // Another Example
         stringEntry =
@@ -123,11 +123,14 @@ internal class Program
         ];
         top10MostRepeatedWords = wordFinder.Find(streamWords);
 
-        PrintFinalScreen(wordFinder.Matrix, top10MostRepeatedWords);
+        PrintFinalScreen(wordFinder.Matrix, streamWords, top10MostRepeatedWords);
     }
     
-    private static void PrintFinalScreen(char[,] matrix, IEnumerable<string> top10MostRepeatedWords)
+    private static void PrintFinalScreen(char[,] matrix, IEnumerable<string> streamWord, IEnumerable<string> top10MostRepeatedWords)
     {
+        Console.WriteLine("Stream Words: ");
+        PrintArray(streamWord);
+        Console.WriteLine();
         Console.WriteLine("Matrix: ");
         PrintMatrix(matrix);
         Console.WriteLine();
